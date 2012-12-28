@@ -1,11 +1,11 @@
 Firestarter::Application.routes.draw do
-  get "projects/index"
 
-  root :to=>"welcome#index"
+  root :to=>"projects#index"
 
   resources :projects do
     resources :jobs, except: :show
   end
 
+  devise_for :users
 
 end
